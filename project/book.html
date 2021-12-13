@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Regalia - Book</title>
+  <link rel="icon" href="images/icon.png">
+  <script src="https://kit.fontawesome.com/7a5bdd12c4.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Volkhov&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/book.css">
+  <link rel="stylesheet" href="css/ticket.css">
+<script>
+function validateForm() {
+var num=0;
+  num = document.abc.num.value;
+ var type = document.abc.type.value;
+ var sb = document.querySelector('#type')
+var x = document.getElementById("hide");
+   
+if (sb.selectedIndex==0) {
+result=num*200;
+  } else if (sb.selectedIndex==1) {
+    result=num*300;
+  } 
+else if (sb.selectedIndex==2) {
+    result=num*300;
+  } 
+else if (sb.selectedIndex==3) {
+    result=num*300;
+  } 
+else if (sb.selectedIndex==4) {
+    result=num*400;
+  } 
+else if (sb.selectedIndex==5) {
+    result=num*400;
+  } 
+else if (sb.selectedIndex==6) {
+    result=num*500;
+  } 
+else if (sb.selectedIndex==7) {
+    result=num*600;
+  } 
+else {
+    result=num*200;
+  }
+document.getElementById("demo").innerHTML = result;
+
+if (x.style.visibility == "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#">
+          <img src="images/icon.png" alt="icon" class="nav-icon">  
+        <span class="nav-brand-name">Regalia</span>
+        </a>
+          <ul class="navbar-nav">
+            <li class="nav-item active item1">
+              <a class="nav-link" href="main.html"><span class="link-color">Home</span><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item item3">
+              <a class="nav-link" href="#"><span class="link-color">Book</span></a>
+            </li>
+            <li class="nav-item item4">
+              <a class="nav-link" href="Main.html"><span class="link-color">Main Page</span></a>
+            </li>
+            
+          </ul>
+      </nav>
+
+      <section class="book">
+
+        <div class="booking">
+            <h3 class="title">
+                Book a Stay
+            </h3>
+	<div ng-app="">
+            <form action="#" name="abc"> 
+	 <span class="dep-date-text">Arrival Date</span><input type="text" class="dep-date" name="dep" ng-model="ab">
+              <span class="dep-date-text">Departure Date</span><input type="text" class="dep-date" name="dep" ng-model="xyz"><br>
+              <span class="name-text">Name</span><input type="text" class="name" name="uname" ng-model="firstname">
+              <span class="adult-text">Adults</span> <select name="adults" class="adults" name="adult"  ng-model="adult">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+              </select>
+              <span class="child-text">Children</span> <select name="children" class="children" name="child" ng-model="child">
+                <option>0</option>
+                <option>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+         <br><span class="email-text">Number Of Room</span><input type="text" class="email" id="num">
+        Type Of Room<select  id="type">
+                <option value="m">Regular</option>
+                <option value="n">Apartment</option>
+                <option value="o">Double</option>
+                <option value="p">Preminium</option>
+                <option value="q">Preminium Apartment</option>
+                <option value="x">Preminium Double</option>
+	<option value="y">Silver</option>
+                <option value="z">Gold</option>
+            </select>
+           <br><input type="checkbox" class="checkbox"><span class="checkbox-text">I agree with terms and conditions</span>
+           <div class="container">
+<br><a href="login.xml" class="btn btn-outline btn1" ><span class="btn-text"><i class="fas fa-arrow-right"></i> Show Information !</span></a>
+<input type="button" value="Show Ticket" class="btn btn-outline btn1" onclick="validateForm()"  ><span class="btn-text"></span></input>
+ 
+           </div>
+          </form>
+	</div>
+        </div>
+     </section>
+<div class="cardWrap"  id="hide">
+        <div class="card cardLeft">
+          <h1>Regalia<span> Discover Luxury</span></h1>
+          
+<table style="width="100%">
+  <tr>
+    <th>Arrival</th>
+    <th>Depart</th> 
+  </tr>
+  <tr>
+    <td>{{ab}}</td>
+    <td>{{xyz}}</td>
+  </tr>
+  <tr>
+    <th>Name</th>
+  <th>Adult</th>
+    <th>child</th> 
+  </tr>
+  <tr>
+    <td> {{firstname}}</td>
+    <td>{{adult}}</td>
+    <td>{{child}}</td>
+  </tr>
+</table>
+        </div>
+        <div class="card cardRight">
+          <div class="eye"></div>
+          <div class="number">
+            <h3 id="demo"></h3>
+            <span>Cost</span>
+          </div>
+          <div class="barcode"></div>
+        </div>
+      </div>
+</body>
+</html>

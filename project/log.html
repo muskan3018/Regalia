@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Regalia - LogIN</title>
+  <link rel="icon" href="images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/login.css">
+<script>
+// Defining a function to validate form 
+function validateForm() {
+    // Retrieving the values of form elements 
+    var pass = document.contactForm.pass.value;
+    var email = document.contactForm.email.value;
+    
+    
+	// Defining error variables with a default value
+    var passErr = emailErr = true;
+    
+   
+    
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+
+   // Validate pass
+ if(pass=="abc123") {
+       printError("passErr", "");
+        passErr = false;
+        
+    } else {
+       printError("ageErr", "Please Enter Correct password");
+    }
+    
+    
+    // Prevent the form from being submitted if there are any errors
+    if(( emailErr ||passErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "LOGIN SUCESSFUL \n" ;
+                       
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+};
+</script>
+</head>
+
+<body>
+
+<section id="login">
+    <div class="row">
+      <div class="padding-col col-lg-6 img">
+      <img src="images/iconacc.png" alt="image" class="img-acc">
+    </div>
+  <div class="padding-col col-lg-6 login-acc">
+      <h2 class="text">Welcome to the world of Regalia!</h2>
+      <div class="container">
+      <form name="myform" onsubmit="return validateForm()" action="book.html" method="post">
+       <br>
+      <span class="Name acc">E-MAIL</span> 
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+<span class="Name acc">PASSWORD</span> 
+        <input type="text" name="pass">
+        <div class="error" id="passErr"></div>
+      <!-- <a href="#" class="btn btn-outline btn1"><span class="btn-text"> Submit </span></a><br> -->
+      <input type="submit" value="submit" class="btn btn-outline btn1"><br>
+      <a href="signup.html" class="btn btn-outline btn1"><span class="btn-text"> Sign UP! </span></a>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>
+</body>
+
+</html>

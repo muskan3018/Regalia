@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> SignUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">>
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" >
+<script>
+// Defining a function to display error message
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+// Defining a function to validate form 
+function validateForm() {
+    // Retrieving the values of form elements 
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var mobile = document.contactForm.mobile.value;
+  var address = document.contactForm.address.value;
+   var age = document.contactForm.age.value;
+      var pass = document.contactForm.pass.value;
+    
+	// Defining error variables with a default value
+    var nameErr = emailErr = mobileErr = countryErr=ageErr=addressErr=passErr = true;
+    
+    // Validate name
+    if(name == "") {
+        printError("nameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+
+ // Validate addess
+    if(name == "") {
+        printError("addressErr", "Please enter your Address");
+    } else {
+        var regex = /^[a-zA-Z\1-50\s]+$/;                
+        if(regex.test(address) === false) {
+            printError("addressErr", "Please enter a valid Address ");
+        } else {
+            printError("addressErr", "");
+            addressErr = false;
+        }
+    }
+    
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    
+    // Validate mobile number
+    if(mobile == "") {
+        printError("mobileErr", "Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(mobile) === false) {
+            printError("mobileErr", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("mobileErr", "");
+            mobileErr = false;
+        }
+    }
+
+   // Validate age
+ if(age >18) {
+       printError("ageErr", "");
+        ageErr = false;
+        
+    } else {
+       printError("ageErr", "Please Enter Correct Age");
+    }
+     
+      // Validate pass
+    if(pass == "") {
+        printError("passErr", "Please enter your Password");
+    } else {
+          var regex = /^[1-9\a-z]+$/;      
+        if(regex.test(pass) === false) {
+            printError("passErr", "Please enter a valid Password");
+        } else{
+            printError("PassErr", "");
+            mobileErr = false;
+        }
+    }
+    
+    // Prevent the form from being submitted if there are any errors
+    if((nameErr || emailErr || mobileErr || ageErr||addressErr||passErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "You've entered the following details: \n" +
+                          "Full Name: " + name + "\n" +
+                          "Email Address: " + email + "\n" +
+		"Age: " + age + "\n" +
+                          "Mobile Number: " + mobile + "\n" ;
+                        
+      
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+};
+</script>
+  <link rel="stylesheet" href="css/account.css">
+ </head>
+<body>
+  <section id="signup">
+    <div class="row">
+      <div class="padding-col col-lg-6 img">
+      <img src="images/zomato.png" alt="image" class="img-acc">
+    </div>
+  <div class="padding-col col-lg-6 signup-acc">
+      <h2 class="text" style=" color:red">welcome To Zomato!</h2>
+      <div class="container">
+      <form name="contactForm" onsubmit="return validateForm()" action="loginin.html" method="post">
+<br>
+        <span class="Name acc">NAME</span> 
+ <input type="text" id="fname" name="name" onblur="bl()">
+        <div class="error" id="nameErr"></div>
+	<br>
+  <span class="Name acc">Address</span> 
+ <input type="text" id="address" name="address" onblur="bl()">
+        <div class="error" id="addressErr"></div>
+	<br>
+
+   <br>
+      <span class="Name acc">E-MAIL</span> 
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+<br>
+	<span class="Name acc">NUMBER</span> 
+        <input type="text" name="mobile" maxlength="10">
+        <div class="error" id="mobileErr"></div>
+<br>
+
+
+<span class="Age acc">AGE</span> 
+ <input type="number" size="6" name="age"  max="99" value="21"><br>
+          <div class="error" id="ageErr"></div>
+<br>   
+
+<span class="Name acc">PASSWORD</span> 
+        <input type="text" name="pass">
+        <div class="error" id="passErr"></div>
+
+   <br>
+        <input type="submit" value="Sign UP!" class="btn btn-outline btn1"><br>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<meta charset="utf-8" name="viewport"
+		content= "width=device-width, initial-scale=1.0"> 
+<script>
+function winter() {
+document.getElementById("p2").style.color = "white";
+document.getElementById("p2").style.fontFamily = "Arial";
+document.getElementById("p2").style.textShadow = "5px 5px 1px #33BAFF, 10px 10px 1px #083F80";
+
+}
+function winterout()
+{
+document.getElementById("p2").style.color = "white";
+document.getElementById("p2").style.textShadow = "0px 0px 0px yellow , 0px 0px 0px #16760F";
+}
+function summer() {
+document.getElementById("p1").style.color = " #19E8CD";
+document.getElementById("p1").style.fontFamily = "Arial";
+document.getElementById("p1").style.textShadow = "5px 5px 1px yellow , 10px 10px 1px #16760F";
+
+}
+function summerout()
+{
+document.getElementById("p1").style.color = "white";
+document.getElementById("p1").style.textShadow = "0px 0px 0px yellow , 0px 0px 0px #16760F";
+}
+</script>
+<style>
+.flex-container {
+  display:flex;
+  text-align: center;
+  color: white;
+flex-direction:row;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+font-size:large;
+ font-family: "Sofia", sans-serif;
+}
+
+.top-left {
+  position: absolute;
+  top: 500px;
+  left: 200px;
+font-size:3cm;
+}
+
+.top-left-button {
+  position: absolute;
+  top: 525px;
+  left: 330px;
+font-size:3cm
+}
+.top-right-button {
+  position: absolute;
+  top: 525px;
+  right: 330px;
+  font-size:3cm
+}
+.top-right {
+  position: absolute;
+  top: 500px;
+  right: 180px;
+  font-size:3cm
+
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 50px;
+  right: 150px;
+font-size:large;
+ font-family: "Sofia", sans-serif;
+}
+
+.centered {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+ font-size:1.5cm; 
+  transform: translate(-50%, -50%);
+  color:black;
+  font-family: "Sofia", sans-serif;
+
+}
+.centered1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+ font-size:1.5cm; 
+  transform: translate(-50%, -50%);
+  color:black;
+color:white;
+ 	
+
+}
+button {
+      width:125px;
+      
+    }
+</style>
+</head>
+
+<body onload="window.alert('WELCOME TO Greece!');" ng-app="myApp" ng-controller="myCtrl">
+<div class="flex-container"> 
+ <img src="https://www.uniquethingstodo.com/wp-content/uploads/2017/03/Lake-Geneva.jpg" alt="Snow" style="float:left;width:50%;height:20cm;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/St_Moritz.jpg" alt="Sw" style="width:50%;height:20cm;">
+  <div class="bottom-left">Welcome to an enchanting wonderland
+in the birthplace of winter sports.</div>
+  <div class="top-left" id="p2" onmouseover="winter()" onmouseout="winterout()">Winter</div>
+<div class="top-left-button">
+  <button type="button"  class="btn btn-outline btn1" onclick="location.href='Winter.html'">Click Me</button>
+</div>
+  <div class="top-right" id="p1" onmouseover="summer()" onmouseout="summerout()">Summer</div>
+<div class="top-right-button">
+  <button type="button" class="btn btn-outline btn1" onclick="location.href='summer.html'">Click Me</button>
+</div>
+  <div class="bottom-right">Live in the sunshine. Swim in the sea. Drink in the wild air.</div>
+<section id="top">
+  <div class="centered" ondblclick="location.href='index.html'" ng-style="myObj" >Experience Legendary Servive In Heart Of Greece.</div>
+	 <div class="centered1" >REGALIA</div>
+</div>
+    <div class="middle">
+        <img src="images/icon.png" class="image-logo" alt="logo">
+      </div>
+      </div>
+  </section>
+</body>
+</html> 

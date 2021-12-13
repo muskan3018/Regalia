@@ -1,0 +1,306 @@
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+}
+
+/* navigation */
+
+.navbar{
+    background-color: #111;
+}
+.nav-icon{
+    height: 70px;
+    width: 70px;
+}
+.nav-brand-name{
+    color: #fff;
+    padding-left: 5px;
+    font-size: 1.5rem;
+}
+.navbar-nav{
+  margin-left: auto;
+}
+
+li{
+    padding-left: 50px;
+}
+.link-color{
+    color: #C9A96A;
+}
+.item5{
+    padding-right: 50px;
+}
+
+/* navigation */
+
+/* heading */
+
+#ame{
+    background-color: #fff;
+   
+}
+.container-heading{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.main-text{
+    color:  #C9A96A;
+    font-size: 3.5rem;
+    font-family: 'Volkhov', serif;
+    font-weight: 100;
+    text-decoration: underline;
+}
+.main-sub{
+    color: #111;
+    font-size: 3.5rem;
+    font-family: 'Volkhov', serif;
+    font-weight: 100;
+}
+
+/* heading */
+
+.horizontal {
+    border: dotted;
+    border-bottom: none;
+    border-width: 5px;
+    width: 5%;
+    margin: 50px auto;
+    border-color: #C9A96A;
+  }
+
+  /* images */
+.container-images{
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.yacht-image{
+    height: 230px;
+    width: 380px;
+    margin-bottom: 20px;
+}
+
+.yacht-div{
+   float: right;
+   text-align: center;
+}
+
+.yacht-text{
+    font-size: 18px;
+    width: 60%;
+    text-align: left;
+    color: #111;
+    font-weight: 500;
+}
+
+.image-title{
+    font-family: 'Volkhov', serif;
+    color: #C9A96A;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.img1{
+    margin-bottom: 150px;
+}
+
+.beach-image{
+    height: 250px;
+    width: 380px;
+    padding-right: 80px;
+}
+
+.beach-div{
+   float: left;
+}
+
+.beach-text{
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    color: #111;
+    font-weight: 500;
+}
+
+.img2{
+    margin-bottom: 100px;
+}
+
+.church-image{
+    height: 300px;
+    width: 380px;
+    margin-bottom: 20px;
+}
+
+.church-div{
+   float: right;
+   text-align: center;
+}
+
+.church-text{
+    font-size: 18px;
+    width: 60%;
+    text-align: left;
+    color: #111;
+    font-weight: 500;
+}
+
+.land-sea{
+    font-weight: bold;
+}
+
+.img3{
+    margin-bottom: 150px;
+}
+  /* images */
+
+/* amentities */
+
+.amenities{
+    text-align: center;
+    font-family: 'Volkhov', serif;
+    font-weight: 200;
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+p{
+    text-align: center;
+}
+
+.ame-1{
+    margin-bottom: 60px;
+}
+.ame-2{
+    margin-bottom: 100px;
+}
+/* amentities */
+.vr-parent{
+    position: relative;
+}
+
+/* gallery */
+
+.gallery{
+    text-align: center;
+    font-family: 'Volkhov', serif;
+    font-weight: 200;
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+
+div.gallery {
+    border: 1px solid #ccc;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  } 
+
+ /* gallery */
+
+ /* footer */
+
+  footer{
+      background-color: #4B4B4B;
+      color: #fff;
+      height: 200px;
+      margin-top: 100px;
+      font-family: 'Muli', sans-serif;
+  }
+
+  .footer-div{
+      padding-top: 50px;
+      padding-right: 100px;
+      padding-left: 100px;
+  }
+
+  .foot-img{
+      top: 40px;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+  }
+
+  .h4{
+     margin: 0;
+     display: inline;
+  }
+
+  .h3{
+      display: inline;
+    padding-left: 1000px;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: #C9A96A;
+  }
+
+  .p{
+      margin-bottom: 0;
+  }
+
+  .fab{
+      padding-top: 20px;
+      padding-right: 30px;
+      font-size: 20px;
+      color: #fff;
+  }
+
+  .fab:hover{
+      color: #C9A96A;
+  }
+ /* footer */

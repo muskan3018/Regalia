@@ -1,0 +1,98 @@
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Muli', sans-serif;
+}
+
+.img-acc{
+  width: 50vw;
+  height: 100vh;
+}
+
+.text{
+  color: #C9A96A; 
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2.5rem;
+}
+
+.login-acc{
+  padding: 0;
+}
+
+.container{
+  background-color: rgb(247, 242, 242);
+  margin-top: 100px;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+}
+
+.acc{
+  color: #111;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.acc:hover{
+  color: #C9A96A;
+}
+
+.box{
+  margin-bottom: 50px;
+}
+
+.uname{
+  margin-top: 50px;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  size: 3px;
+  color: #F8F7F7;
+}
+
+.btn-outline {
+  color: #6B6B6B;
+  background-color: #6B6B6B;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 100px;
+  border-color: #6B6B6B;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.btn-outline {
+  color: #6B6B6B;
+  background-color: #ffffff;
+  border-color: #6B6B6B;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: #fff;
+  color: #C9A96A;
+  border-color: #C9A96A;
+}
+
+.btn-text {
+  font-size: 1rem;
+  font-family: 'Muli', sans-serif;
+}

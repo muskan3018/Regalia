@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Regalia - SignUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script>
+// Defining a function to display error message
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+// Defining a function to validate form 
+function validateForm() {
+    // Retrieving the values of form elements 
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var mobile = document.contactForm.mobile.value;
+    var country = document.contactForm.country.value;
+    var dob = document.contactForm.dob.value;
+   var age = document.contactForm.age.value;
+    var hobbies = [];
+    var checkboxes = document.getElementsByName("hobbies[]");
+    for(var i=0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked) {
+            // Populate hobbies array with selected values
+            hobbies.push(checkboxes[i].value);
+        }
+    }
+    
+	// Defining error variables with a default value
+    var nameErr = emailErr = mobileErr = countryErr = genderErr = dobErr = ageErr= true;
+    
+    // Validate name
+    if(name == "") {
+        printError("nameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+    
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    
+    // Validate mobile number
+    if(mobile == "") {
+        printError("mobileErr", "Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(mobile) === false) {
+            printError("mobileErr", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("mobileErr", "");
+            mobileErr = false;
+        }
+    }
+     
+    
+    // Validate country
+    if(country == "") {
+        printError("countryErr", "Please select your country");
+    } else {
+        printError("countryErr", "");
+        countryErr = false;
+    }
+  // Validate dob
+    if(dob == "") {
+        printError("dobErr", "Please enter Year Of Birth");
+    } else {
+        var regex = /^[1-4]\d{3}$/;
+        if(regex.test(dob) === false) {
+            printError("dobErr", "Please enter a valid Year of Birth");
+        } else{
+            printError("dobErr", "");
+            dobErr = false;
+        }
+    }
+    // Validate Age
+    var d = new Date();
+  var n = d.getFullYear();
+  var a=n-dob;
+    if(age == a) {
+       printError("ageErr", "");
+        ageErr = false;
+        
+    } else {
+       printError("ageErr", "Please Enter Correct Age");
+    }
+
+    
+    // Prevent the form from being submitted if there are any errors
+    if((nameErr || emailErr || mobileErr || countryErr || dobErr || ageErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "You've entered the following details: \n" +
+                          "Full Name: " + name + "\n" +
+                          "Email Address: " + email + "\n" +
+		"Age: " + age + "\n" +
+		"Year Of Birth: " + dob + "\n" +
+                          "Mobile Number: " + mobile + "\n" +
+                          "Country: " + country + "\n" ;
+                    
+      
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+};
+</script>
+  <link rel="stylesheet" href="css/account.css">
+ </head>
+<body>
+  <section id="signup">
+    <div class="row">
+      <div class="padding-col col-lg-6 img">
+      <img src="images/iconacc.png" alt="image" class="img-acc">
+    </div>
+  <div class="padding-col col-lg-6 signup-acc">
+      <h2 class="text">Join the world of Regalia!</h2>
+      <div class="container">
+      <form name="contactForm" onsubmit="return validateForm()" action="book.html" method="post">
+<br>
+        <span class="Name acc">NAME</span> 
+ <input type="text" id="fname" name="name" onblur="bl()" ng-model="firstname">
+        <div class="error" id="nameErr"></div>
+	<br>
+
+   <span class="Name acc">COUNTRY</span> 
+         <input type="text" name="country"> 
+        <div class="error" id="countryErr"></div>
+   <br>
+      <span class="Name acc">E-MAIL</span> 
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+<br>
+	<span class="Name acc">NUMBER</span> 
+        <input type="text" name="mobile" maxlength="10">
+        <div class="error" id="mobileErr"></div>
+<br>
+
+
+<span class="Age acc">AGE</span> 
+ <input type="number" size="6" name="age" min="18" max="99" value="21"><br>
+          <div class="error" id="ageErr"></div>
+<br>   
+<span class="Name acc">YAER OF BIRTH</span> 
+        <input type="text" name="dob" maxlength="4">
+        <div class="error" id="dobErr"></div>
+
+
+   <br>
+        <input type="submit" value="Sign UP!" class="btn btn-outline btn1"><br>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

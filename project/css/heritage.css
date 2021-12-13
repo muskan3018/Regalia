@@ -1,0 +1,92 @@
+#car{
+    background-color: #F8F7F7;
+     text-align: center;
+}
+body{
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+}
+
+.row{
+margin-right: 0;
+}
+
+.car-element{
+  padding: 0;
+}
+
+.div2{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.header{
+  font-size: 5rem;
+  margin-top: 40px;
+  font-family: 'Volkhov', serif;
+
+}
+
+.small-head{
+    font-family: 'Muli', sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+
+.icon{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.title{
+  font-size: 3rem;
+    font-family: 'Muli', sans-serif;
+    margin-top: 30px;
+}
+
+.para{
+  margin: 30px auto 30px;;
+  width: 70%;
+    font-family: 'Muli', sans-serif;
+    font-weight: lighter;
+}
+
+
+.btn1{
+  padding: 20px;
+  margin: 40px;
+  size: 3px;
+  color: #F8F7F7;
+}
+
+.btn-outline {
+  color: #6B6B6B;
+  background-color: #6B6B6B;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #6B6B6B;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.btn-outline {
+  color: #6B6B6B;
+  background-color: #ffffff;
+  border-color: #6B6B6B;
+  font-weight: bold;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: #fff;
+  color: #C9A96A;
+  border-color: #C9A96A;
+}

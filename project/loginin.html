@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> LOGIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<script>
+// Defining a function to display error message
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm() {
+    // Retrieving the values of form elements 
+  
+    var email = document.contactForm.email.value;
+      var pass = document.contactForm.pass.value;
+    
+	
+    var emailErr =passErr = true;
+    
+
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false)	
+	 {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    
+
+
+   // Validate age
+ if(pass =="abc123") {
+       printError("passErr", "");
+        passErr = false;
+        
+    } else {
+       printError("passErr", "Please Enter Correct Password");
+    }
+    
+    
+    
+    if((emailErr ||passErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "LOGIN SUCESSFULL: \n" ;
+                        
+      
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+};
+</script>
+  <link rel="stylesheet" href="css/account.css">
+ </head>
+<body>
+  <section id="signup">
+    <div class="row">
+      <div class="padding-col col-lg-6 img">
+      <img src="images/zomato.png" alt="image" class="img-acc">
+    </div>
+  <div class="padding-col col-lg-6 signup-acc">
+      <h2 class="text" style=" color:red">WELCOME  TO ZOMATO!</h2>
+      <div class="container">
+      <form name="contactForm" onsubmit="return validateForm()"  method="post">
+
+   <br>
+      <span class="Name acc">E-MAIL</span> 
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+<br>
+
+<span class="Name acc">PASSWORD</span> 
+        <input type="text" name="pass">
+        <div class="error" id="passErr"></div>
+
+   <br>
+        <input type="submit" value="Sign UP!" class="btn btn-outline btn1"><br>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
